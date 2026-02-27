@@ -1,67 +1,59 @@
 
-public class Pattern19 {
+public class Pattern20 {
 
     public static void main(String[] args) {
 
         /*
+        *                 *
+        * *             * * 
+        * * *         * * *
+        * * * *     * * * * 
         * * * * * * * * * *
-        * * * *     * * * *
-        * * *         * * * 
+        * * * *     * * * * 
+        * * *         * * *
         * *             * * 
         *                 *
-        *                 * 
-        * *             * *
-        * * *         * * * 
-        * * * *     * * * * 
-        * * * * * * * * * * 
          */
         int n = 5;
-        int iniS = 0;
 
-        // UPPER HALF
-
+        // Upper half
         for (int i = 1; i <= n; i++) {
 
-            //stars
-            for (int j = 1; j <= n - i + 1; j++) {
+            // left stars
+            for (int j = 1; j <= i; j++) {
                 System.out.print(" * ");
             }
 
-            //space
-            for (int j = 1; j <= iniS; j++) {
+            // spaces
+            for (int j = 1; j <= 2 * (n - i); j++) {
                 System.out.print("   ");
             }
 
-            //stars
-            for (int j = 1; j <= n - i + 1; j++) {
+            // right stars
+            for (int j = 1; j <= i; j++) {
                 System.out.print(" * ");
             }
-            iniS += 2;
 
             System.out.println();
         }
 
-        iniS = 2 * n - 2;
+        // Lower half
+        for (int i = n - 1; i >= 1; i--) {
 
-        // LOWER HALF
-
-        for (int i = 1; i <= n; i++) {
-
-            //stars
+            // left stars
             for (int j = 1; j <= i; j++) {
                 System.out.print(" * ");
             }
 
-            //space
-            for (int j = 1; j <= iniS; j++) {
+            // spaces
+            for (int j = 1; j <= 2 * (n - i); j++) {
                 System.out.print("   ");
             }
 
-            //stars
+            // right stars
             for (int j = 1; j <= i; j++) {
                 System.out.print(" * ");
             }
-            iniS -= 2;
 
             System.out.println();
         }
